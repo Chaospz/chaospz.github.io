@@ -1,6 +1,7 @@
 site_name: 个人知识库
 site_url: https://chaospz.github.io/
 site_author: 站点作者
+
 nav:
   - Home: 'index.md'
   - 'User Guide':
@@ -8,6 +9,7 @@ nav:
   - About:
     - 'License': 'license.md'
     - 'Release Notes': 'release-notes.md'
+
 theme:
     name: readthedocs
     highlightjs: true

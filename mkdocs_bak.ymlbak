@@ -1,0 +1,167 @@
+# 项目信息
+site_name: 私人知识库 # 项目名称
+site_url: https://chaospz.github.io/ # 我在nginx中使用的是8000端口，如果你使用的是80端口，可以直接写成https://localhost/。
+site_author: Chaos Lee # 作者
+site_description: >- # 项目描述
+  Welcome to Shaun's rabbit hole. This site serves as a personal knowledge base for me to record my thoughts and ideas. It is also a place for me to share my knowledge and experience with the world. I hope you find something useful here.
+
+# 代码仓库信息
+repo_name: Chaospz/chaospz.github.io # 仓库名称
+repo_url: https://github.com/Chaospz/chaospz.github.io.git # 仓库地址
+
+# 版权信息
+copyright: Copyright &copy; 2024 ~ now |   Chaos Lee (Chaos)
+
+# 配置
+theme:
+  custom_dir: material/overrides # 自定义文件夹，对于个别页面，如果你不想使用主题的默认样式，可以在这里进行修改，使用里面的文件覆盖主题的默认文件。具体可以参考material官方文档。
+  name: material # 主题名称，Material已经是最优秀的选择了，相信我。
+#   logo: static/images/logo.png # logo 图片
+  language: zh # 默认语言
+  features: # 功能
+    - announce.dismiss # 可以叉掉公告的功能
+    # - content.action.edit # 编辑按钮，似乎没啥用
+    # - content.action.view # 查看按钮，似乎没啥用
+    - content.code.annotate # 代码注释，具体不清楚
+    - content.code.copy # 复制代码按钮
+    # - content.code.select # 选择代码按钮
+    # - content.tabs.link # 链接标签
+    - content.tooltips # 不太清楚呢这个
+    # - header.autohide # 自动隐藏header
+    - navigation.expand # 默认展开导航栏
+    # - navigation.footer # 底部导航栏
+    - navigation.indexes # 索引按钮可以直接触发文件，而不是只能点击其下属选项浏览，这个功能可以给对应的section提供很好的预览和导航功能
+    # - navigation.instant # 瞬间加载 最好注释掉，多语言切换这个会导致跳回首页
+    - navigation.instant.prefetch # 预加载
+    - navigation.instant.progress # 进度条
+    # - navigation.path # 导航路径， 目前好像没啥用
+    # - navigation.prune # 只构建可见的页面
+    - navigation.sections # 导航栏的section
+    - navigation.tabs # 顶级索引被作为tab
+    - navigation.tabs.sticky # tab始终可见
+    - navigation.top # 开启顶部导航栏
+    - navigation.tracking # 导航栏跟踪
+    - search.highlight # 搜索高亮
+    - search.share # 搜索分享
+    - search.suggest # 搜索建议
+    - toc.follow # 目录跟踪-页面右侧的小目录
+    - toc.integrate # 目录跟踪集成到左侧大目录中
+  palette:
+    - media: "(prefers-color-scheme)" # 主题颜色
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/link
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)" # 浅色
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)" # 深色
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off
+        name: Switch to system preference
+  font: # 字体，大概率不需要换
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/favicon.png # 网站图标 似乎不需要管
+  icon: # 一些用到的icon
+    logo: logo
+    previous: fontawesome/solid/angle-left
+    next: fontawesome/solid/angle-right
+    tag:
+      default-tag: fontawesome/solid/tag
+      hardware-tag: fontawesome/solid/microchip
+      software-tag: fontawesome/solid/laptop-code
+
+# Plugins
+plugins:
+  - tags # 标签功能插件
+  - blog # 博客功能插件
+  - search: # 搜索插件
+      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])' # 分隔符
+      docs_structure: suffix # 抄来的，不太懂
+      fallback_to_default: true # 抄来的，不太懂
+      reconfigure_material: true # 抄来的，不太懂
+      reconfigure_search: true # 抄来的，不太懂
+
+# 额外配置项
+extra:
+  generator: false # 是否显示生成器
+  status: # 不是很懂有什么用
+    new: Recently added
+    deprecated: Deprecated
+  social: # 社交媒体
+    - icon: fontawesome/solid/house
+    #   link: http://www.cuishuaiwen.com/
+    - icon: fontawesome/brands/github
+    #   link: https://github.com/Shuaiwen-Cui
+    - icon: fontawesome/brands/linkedin
+    #   link: https://www.linkedin.com/in/shaun-shuaiwen-cui/
+    - icon: fontawesome/brands/researchgate
+    #   link: https://www.researchgate.net/profile/Shuaiwen-Cui
+    - icon: fontawesome/brands/orcid
+    #   link: https://orcid.org/0000-0003-4447-6687
+    - icon: fontawesome/brands/twitter
+    #   link: https://twitter.com/ShuaiwenC
+  tags: # 自定义标签
+    Default: default-tag
+    Hardware: hardware-tag
+    Software: software-tag
+
+# 扩展
+markdown_extensions: # markdown extensions
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      normalize_issue_symbols: true
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      auto_append:
+        - includes/mkdocs.md
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
